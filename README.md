@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><img height="188" width="198" src="https://botman.io/img/botman.png"></p>
 <h1 align="center">BotMan Studio</h1>
 
@@ -23,3 +24,7 @@ If you discover a security vulnerability within BotMan or BotMan Studio, please 
 
 BotMan is free software distributed under the terms of the MIT license.
 
+=======
+# sakaibot
+A sakai bot that utilizes the REST endpoints on the sakai to make information easily accessible.
+>>>>>>> 5d732b71b30741efa25eb3f0bb88481aa67cf4cd
