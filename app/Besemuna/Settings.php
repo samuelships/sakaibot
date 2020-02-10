@@ -33,25 +33,32 @@ public static function updateUser( array $info) {
     // check if user already exists
     try {
         $u = User::where("telegram_userid", $user->getID())->firstOrFail();
+        $u->userid = $info["userID"];
+        $u->password = $info["password"];
         $u->telegram_userid = $user->getID();
         $u->telegram_username = $user->getUsername();
         $u->telegram_firstname = $user->getfirstName();
         $u->telegram_lastname = $user->GetLastName();
         $u->telegram_lastinfoupdate = Carbon::now();
         $u->save();
+        $bot->reply('UPDATED');
 
     } catch( \Illuminate\Database\Eloquent\ModelNotFoundException $e) {
         // create new user
         $u = new User();
+        $u->userid = $info["userID"];
+        $u->password = $info["password"];
         $u->telegram_userid = $user->getID();
         $u->telegram_username = $user->getUsername();
         $u->telegram_firstname = $user->getfirstName();
         $u->telegram_lastname = $user->GetLastName();
         $u->telegram_lastinfoupdate = Carbon::now();
         $u->save();
+
+        $bot->reply('ACCOUNT CREATED');
     };
 
-    $bot->reply('UPDATED');
+    
 }
 
 }

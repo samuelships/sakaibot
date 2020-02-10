@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('sakaibot:fetch:sites')->everyMinute();
+        $schedule->command('sakaibot:fetch:assignments')->everyMinute();
     }
 
     /**
